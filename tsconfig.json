@@ -1,21 +1,21 @@
 {
   "compilerOptions": {
     "noImplicitAny": true,
-    "module": "es2015",
+    "module": "commonjs",
     "target": "es5",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "declaration": true,
     "moduleResolution": "node",
     "noUnusedLocals": true,
-    "types": ["hammerjs", "jasmine", "node"],
     "lib": ["es2015", "dom"],
     "baseUrl": ".",
     "paths": {
       "@angular/*": ["node_modules/@angular/*"]
     },
     "strictNullChecks": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "outDir": "./dist"
   },
   "files": ["index.ts", "./src/jwt.interceptor.ts"],
   "exclude": ["node_modules", "bundles"],
