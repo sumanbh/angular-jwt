@@ -21,9 +21,9 @@
   "bugs": {
     "url": "https://github.com/auth0/angular2-jwt/issues"
   },
-  "main": "bundles/core.umd.js",
-  "module": "index.js",
+  "main": "bundles/core.commonjs.js",
   "typings": "index.d.ts",
+  "types": "index.d.ts",
   "homepage": "https://github.com/auth0/angular2-jwt",
   "peerDependencies": {
     "@angular/common": ">=6.0.0"

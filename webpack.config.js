@@ -25,9 +25,9 @@ module.exports = {
   output: {
     path: helpers.root('bundles'),
     publicPath: '/',
-    filename: 'core.umd.js',
+    filename: 'core.commonjs.js',
     library: 'angular-jwt',
-    libraryTarget: 'umd',
+    libraryTarget: 'commonjs',
     globalObject: 'typeof self !== \'undefined\' ? self : this'
   },
 
