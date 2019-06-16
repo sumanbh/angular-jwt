@@ -20,7 +20,11 @@
   "files": ["index.ts", "./src/jwt.interceptor.ts"],
   "exclude": ["node_modules", "bundles"],
   "angularCompilerOptions": {
+    "annotateForClosureCompiler": true,
+    "skipTemplateCodegen": true,
     "strictMetadataEmit": true,
-    "skipTemplateCodegen": true
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true,
+    "enableResourceInlining": true
   }
 }

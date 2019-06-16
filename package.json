@@ -4,7 +4,8 @@
   "description": "JSON Web Token helper library for Angular",
   "scripts": {
     "build": "webpack --mode production",
-    "prepublish": "tsc"
+    "prepublish": "tsc",
+    "ngc": "ngc"
   },
   "repository": {
     "type": "git",

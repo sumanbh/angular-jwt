@@ -1,17 +1,9 @@
 "use strict";
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ */
 // tslint:disable:no-bitwise
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var __param = (this && this.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var jwtoptions_token_1 = require("./jwtoptions.token");
@@ -20,7 +12,16 @@ var JwtHelperService = /** @class */ (function () {
         if (config === void 0) { config = null; }
         this.tokenGetter = config && config.tokenGetter || function () { };
     }
-    JwtHelperService.prototype.urlBase64Decode = function (str) {
+    /**
+     * @param {?} str
+     * @return {?}
+     */
+    JwtHelperService.prototype.urlBase64Decode = /**
+     * @param {?} str
+     * @return {?}
+     */
+    function (str) {
+        /** @type {?} */
         var output = str.replace(/-/g, '+').replace(/_/g, '/');
         switch (output.length % 4) {
             case 0: {
@@ -40,9 +41,18 @@ var JwtHelperService = /** @class */ (function () {
         }
         return this.b64DecodeUnicode(output);
     };
-    // credits for decoder goes to https://github.com/atk
-    JwtHelperService.prototype.b64decode = function (str) {
+    /**
+     * @param {?} str
+     * @return {?}
+     */
+    JwtHelperService.prototype.b64decode = /**
+     * @param {?} str
+     * @return {?}
+     */
+    function (str) {
+        /** @type {?} */
         var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
+        /** @type {?} */
         var output = '';
         str = String(str).replace(/=+$/, '');
         if (str.length % 4 === 1) {
@@ -66,44 +76,83 @@ var JwtHelperService = /** @class */ (function () {
         }
         return output;
     };
-    JwtHelperService.prototype.b64DecodeUnicode = function (str) {
+    /**
+     * @param {?} str
+     * @return {?}
+     */
+    JwtHelperService.prototype.b64DecodeUnicode = /**
+     * @param {?} str
+     * @return {?}
+     */
+    function (str) {
         return decodeURIComponent(Array.prototype.map
             .call(this.b64decode(str), function (c) {
             return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
         })
             .join(''));
     };
-    JwtHelperService.prototype.decodeToken = function (token) {
+    /**
+     * @param {?=} token
+     * @return {?}
+     */
+    JwtHelperService.prototype.decodeToken = /**
+     * @param {?=} token
+     * @return {?}
+     */
+    function (token) {
         if (token === void 0) { token = this.tokenGetter(); }
         if (token === null) {
             return null;
         }
+        /** @type {?} */
         var parts = token.split('.');
         if (parts.length !== 3) {
             throw new Error('The inspected token doesn\'t appear to be a JWT. Check to make sure it has three parts and see https://jwt.io for more.');
         }
+        /** @type {?} */
         var decoded = this.urlBase64Decode(parts[1]);
         if (!decoded) {
             throw new Error('Cannot decode the token.');
         }
         return JSON.parse(decoded);
     };
-    JwtHelperService.prototype.getTokenExpirationDate = function (token) {
+    /**
+     * @param {?=} token
+     * @return {?}
+     */
+    JwtHelperService.prototype.getTokenExpirationDate = /**
+     * @param {?=} token
+     * @return {?}
+     */
+    function (token) {
         if (token === void 0) { token = this.tokenGetter(); }
+        /** @type {?} */
         var decoded;
         decoded = this.decodeToken(token);
         if (!decoded.hasOwnProperty('exp')) {
             return null;
         }
+        /** @type {?} */
         var date = new Date(0);
         date.setUTCSeconds(decoded.exp);
         return date;
     };
-    JwtHelperService.prototype.isTokenExpired = function (token, offsetSeconds) {
+    /**
+     * @param {?=} token
+     * @param {?=} offsetSeconds
+     * @return {?}
+     */
+    JwtHelperService.prototype.isTokenExpired = /**
+     * @param {?=} token
+     * @param {?=} offsetSeconds
+     * @return {?}
+     */
+    function (token, offsetSeconds) {
         if (token === void 0) { token = this.tokenGetter(); }
         if (token === null || token === '') {
             return true;
         }
+        /** @type {?} */
         var date = this.getTokenExpirationDate(token);
         offsetSeconds = offsetSeconds || 0;
         if (date === null) {
@@ -111,11 +160,17 @@ var JwtHelperService = /** @class */ (function () {
         }
         return !(date.valueOf() > new Date().valueOf() + offsetSeconds * 1000);
     };
-    JwtHelperService = __decorate([
-        core_1.Injectable(),
-        __param(0, core_1.Inject(jwtoptions_token_1.JWT_OPTIONS)),
-        __metadata("design:paramtypes", [Object])
-    ], JwtHelperService);
+    JwtHelperService.decorators = [
+        { type: core_1.Injectable }
+    ];
+    /** @nocollapse */
+    JwtHelperService.ctorParameters = function () { return [
+        { type: undefined, decorators: [{ type: core_1.Inject, args: [jwtoptions_token_1.JWT_OPTIONS,] }] }
+    ]; };
     return JwtHelperService;
 }());
 exports.JwtHelperService = JwtHelperService;
+if (false) {
+    /** @type {?} */
+    JwtHelperService.prototype.tokenGetter;
+}
