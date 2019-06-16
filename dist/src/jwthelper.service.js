@@ -1,16 +1,19 @@
 "use strict";
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
-// tslint:disable:no-bitwise
 Object.defineProperty(exports, "__esModule", { value: true });
+// tslint:disable:no-bitwise
 var core_1 = require("@angular/core");
 var jwtoptions_token_1 = require("./jwtoptions.token");
 var JwtHelperService = /** @class */ (function () {
     function JwtHelperService(config) {
         if (config === void 0) { config = null; }
-        this.tokenGetter = config && config.tokenGetter || function () { };
+        this.tokenGetter = config && config.tokenGetter || (/**
+         * @return {?}
+         */
+        function () { });
     }
     /**
      * @param {?} str
@@ -41,11 +44,17 @@ var JwtHelperService = /** @class */ (function () {
         }
         return this.b64DecodeUnicode(output);
     };
+    // credits for decoder goes to https://github.com/atk
+    // credits for decoder goes to https://github.com/atk
     /**
+     * @private
      * @param {?} str
      * @return {?}
      */
-    JwtHelperService.prototype.b64decode = /**
+    JwtHelperService.prototype.b64decode = 
+    // credits for decoder goes to https://github.com/atk
+    /**
+     * @private
      * @param {?} str
      * @return {?}
      */
@@ -77,18 +86,24 @@ var JwtHelperService = /** @class */ (function () {
         return output;
     };
     /**
+     * @private
      * @param {?} str
      * @return {?}
      */
     JwtHelperService.prototype.b64DecodeUnicode = /**
+     * @private
      * @param {?} str
      * @return {?}
      */
     function (str) {
         return decodeURIComponent(Array.prototype.map
-            .call(this.b64decode(str), function (c) {
+            .call(this.b64decode(str), (/**
+         * @param {?} c
+         * @return {?}
+         */
+        function (c) {
             return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-        })
+        }))
             .join(''));
     };
     /**

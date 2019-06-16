@@ -1,15 +1,13 @@
 {
-  "name": "@auth0/angular-jwt",
-  "version": "2.2.0",
+  "name": "angular-jwt-universal",
+  "version": "0.0.1",
   "description": "JSON Web Token helper library for Angular",
   "scripts": {
-    "build": "webpack --mode production",
-    "prepublish": "tsc",
-    "ngc": "ngc"
+    "prepublish": "ngc"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/auth0/angular2-jwt"
+    "url": "git+https://github.com/sumanbh/angular-jwt-universal"
   },
   "keywords": [
     "angular",
@@ -17,47 +15,31 @@
     "authentication",
     "jwt"
   ],
-  "author": "Ryan Chenkie",
+  "author": "Suman Bhattarai",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/auth0/angular2-jwt/issues"
+    "url": "https://github.com/sumanbh/angular-jwt-universal/issues"
   },
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "types": "dist/index.d.ts",
-  "homepage": "https://github.com/auth0/angular2-jwt",
+  "homepage": "https://github.com/sumanbh/angular-jwt-universal",
   "peerDependencies": {
     "@angular/common": ">=6.0.0",
     "rxjs": ">=6.1.0"
   },
   "devDependencies": {
-    "@angular/animations": "^6.0.0",
-    "@angular/common": "^6.0.0",
-    "@angular/compiler": "^6.0.0",
-    "@angular/compiler-cli": "^6.0.0",
-    "@angular/core": "^6.0.0",
-    "@angular/platform-browser": "^6.0.0",
-    "@angular/platform-browser-dynamic": "^6.0.0",
-    "@angular/platform-server": "^6.0.0",
-    "@angular/router": "^6.0.0",
-    "@types/node": "^10.0.6",
-    "awesome-typescript-loader": "^5.0.0",
-    "clean-webpack-plugin": "^0.1.19",
-    "core-js": "^2.5.6",
-    "istanbul-instrumenter-loader": "^3.0.1",
-    "loader-utils": "^1.1.0",
-    "reflect-metadata": "^0.1.12",
-    "rimraf": "^2.6.2",
-    "rxjs": "6.1.0",
-    "semantic-release": "^15.4.0",
-    "source-map-loader": "^0.2.3",
+    "@angular/common": "^8.0.1",
+    "@angular/compiler": "^8.0.1",
+    "@angular/compiler-cli": "^8.0.1",
+    "@angular/core": "^8.0.1",
+    "@types/node": "^12.0.8",
+    "rxjs": "^6.5.2",
     "ts-helpers": "^1.1.2",
+    "tsickle": "^0.35.0",
     "tslint": "^5.10.0",
-    "tslint-loader": "^3.6.0",
-    "typescript": ">=2.7.0 <2.8.0",
-    "webpack": "^4.8.1",
-    "webpack-cli": "^3.3.4",
-    "zone.js": "^0.8.26"
+    "typescript": "3.4.2",
+    "zone.js": "^0.9.1"
   },
   "dependencies": {
     "url": "^0.11.0"

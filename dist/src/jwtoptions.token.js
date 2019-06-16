@@ -1,7 +1,7 @@
 "use strict";
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");

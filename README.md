@@ -1,23 +1,19 @@
-# @auth0/angular-jwt
+# angular-jwt-universal
 
-### **NOTE:** This library is now at version 2 and is published on npm as `@auth0/angular-jwt`. If you're looking for the pre-v1.0 version of this library, it can be found in the `pre-v1.0` branch and on npm as `angular2-jwt`.
-
-**@auth0/angular-jwt v2 is to be used with Angular v6+ and RxJS v6+. For Angular v4.3 to v5+, use @auth0/angular-jwt v1**
+**angular-jwt-universal is to be used with Angular v6+ and RxJS v6+.**
 
 This library provides an `HttpInterceptor` which automatically attaches a [JSON Web Token](https://jwt.io) to `HttpClient` requests.
 
 This library does not have any functionality for (or opinion about) implementing user authentication and retrieving JWTs to begin with. Those details will vary depending on your setup, but in most cases, you will use a regular HTTP request to authenticate your users and then save their JWTs in local storage or in a cookie if successful.
 
-> **Note:** This library can only be used with Angular 4.3 and higher because it relies on an `HttpInterceptor` from Angular's `HttpClient`. This feature is not available on lower versions.
-
 ## Installation
 
 ```bash
 # installation with npm
-npm install @auth0/angular-jwt
+npm install angular-jwt-universal
 
 # installation with yarn
-yarn add @auth0/angular-jwt
+yarn add angular-jwt-universal
 ```
 
 ## Usage: Standalone
@@ -27,7 +23,7 @@ injectable features, you can simply create an instance of the utility and use it
 directly:
 
 ```ts
-import { JwtHelperService } from '@auth0/angular-jwt';
+import { JwtHelperService } from 'angular-jwt-universal';
 
 const helper = new JwtHelperService();
 
@@ -43,7 +39,7 @@ Import the `JwtModule` module and add it to your imports list. Call the `forRoot
 Be sure to import the `HttpClientModule` as well.
 
 ```ts
-import { JwtModule } from '@auth0/angular-jwt';
+import { JwtModule } from 'angular-jwt-universal';
 import { HttpClientModule } from '@angular/common/http';
 
 export function tokenGetter() {
@@ -220,7 +216,7 @@ Import the `JWT_OPTIONS` `InjectionToken` so that you can instruct it to use you
 Create a factory function and specify the options as you normally would if you were using `JwtModule.forRoot` directly. If you need to use a service in the function, list it as a parameter in the function and pass it in the `deps` array when you provide the function.
 
 ```ts
-import { JwtModule, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { JwtModule, JWT_OPTIONS } from 'angular-jwt-universal';
 import { TokenService } from './app.tokenservice';
 
 // ...
@@ -257,7 +253,7 @@ NOTE: If a `jwtOptionsFactory` is defined, then `config` is ignored. _Both confi
 The custom factory function approach described above can be used to get a token asynchronously with Ionic's `Storage`.
 
 ```ts
-import { JwtModule, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { JwtModule, JWT_OPTIONS } from 'angular-jwt-universal';
 import { Storage } from '@ionic/storage';
 
 export function jwtOptionsFactory(storage) {
@@ -293,7 +289,7 @@ This service contains helper functions:
 ## isTokenExpired (old tokenNotExpired function)
 
 ```
-import { JwtHelperService } from '@auth0/angular-jwt';
+import { JwtHelperService } from 'angular-jwt-universal';
 // ...
 constructor(public jwtHelper: JwtHelperService) {}
 
@@ -305,7 +301,7 @@ console.log(this.jwtHelper.isTokenExpired()); // true or false
 ## getTokenExpirationDate
 
 ```
-import { JwtHelperService } from '@auth0/angular-jwt';
+import { JwtHelperService } from 'angular-jwt-universal';
 // ...
 constructor(public jwtHelper: JwtHelperService) {}
 
@@ -317,7 +313,7 @@ console.log(this.jwtHelper.getTokenExpirationDate()); // date
 ## decodeToken
 
 ```
-import { JwtHelperService } from '@auth0/angular-jwt';
+import { JwtHelperService } from 'angular-jwt-universal';
 // ...
 constructor(public jwtHelper: JwtHelperService) {}
 

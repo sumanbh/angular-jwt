@@ -1,7 +1,7 @@
 "use strict";
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
@@ -20,10 +20,12 @@ exports.JWT_OPTIONS = jwtoptions_token_2.JWT_OPTIONS;
  */
 function JwtModuleOptions() { }
 exports.JwtModuleOptions = JwtModuleOptions;
-/** @type {?|undefined} */
-JwtModuleOptions.prototype.jwtOptionsProvider;
-/** @type {?|undefined} */
-JwtModuleOptions.prototype.config;
+if (false) {
+    /** @type {?|undefined} */
+    JwtModuleOptions.prototype.jwtOptionsProvider;
+    /** @type {?|undefined} */
+    JwtModuleOptions.prototype.config;
+}
 var JwtModule = /** @class */ (function () {
     function JwtModule(parentModule) {
         if (parentModule) {

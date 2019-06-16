@@ -1,7 +1,7 @@
 "use strict";
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
@@ -38,13 +38,17 @@ var JwtInterceptor = /** @class */ (function () {
         /** @type {?} */
         var requestHost = requestUrl.host || (typeof location === 'object' && location.host);
         return (requestHost === undefined ||
-            this.whitelistedDomains.findIndex(function (domain) {
+            this.whitelistedDomains.findIndex((/**
+             * @param {?} domain
+             * @return {?}
+             */
+            function (domain) {
                 return typeof domain === 'string'
                     ? domain === requestHost
                     : domain instanceof RegExp
                         ? domain.test(requestHost)
                         : false;
-            }) > -1);
+            })) > -1);
     };
     /**
      * @param {?} request
@@ -57,13 +61,17 @@ var JwtInterceptor = /** @class */ (function () {
     function (request) {
         /** @type {?} */
         var url = request.url;
-        return (this.blacklistedRoutes.findIndex(function (route) {
+        return (this.blacklistedRoutes.findIndex((/**
+         * @param {?} route
+         * @return {?}
+         */
+        function (route) {
             return typeof route === 'string'
                 ? route === url
                 : route instanceof RegExp
                     ? route.test(url)
                     : false;
-        }) > -1);
+        })) > -1);
     };
     /**
      * @param {?} token
@@ -78,6 +86,7 @@ var JwtInterceptor = /** @class */ (function () {
      * @return {?}
      */
     function (token, request, next) {
+        var _a;
         /** @type {?} */
         var tokenIsExpired = false;
         if (!token && this.throwNoTokenError) {
@@ -99,7 +108,6 @@ var JwtInterceptor = /** @class */ (function () {
             });
         }
         return next.handle(request);
-        var _a;
     };
     /**
      * @param {?} request
@@ -116,10 +124,14 @@ var JwtInterceptor = /** @class */ (function () {
         /** @type {?} */
         var token = this.tokenGetter();
         if (token instanceof Promise) {
-            return from_1.from(token).pipe(operators_1.mergeMap(function (asyncToken) {
+            return from_1.from(token).pipe(operators_1.mergeMap((/**
+             * @param {?} asyncToken
+             * @return {?}
+             */
+            function (asyncToken) {
                 // @ts-ignore
                 return _this.handleInterception(asyncToken, request, next);
-            }));
+            })));
         }
         else {
             return this.handleInterception(token, request, next);

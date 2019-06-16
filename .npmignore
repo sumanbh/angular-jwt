@@ -14,7 +14,7 @@ examples
 .github
 coverage
 !*.metadata.json
-!bundles/*.js
+!dist/*.js
 tsconfig.json
 
 #################
