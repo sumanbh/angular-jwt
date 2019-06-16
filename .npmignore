@@ -16,6 +16,7 @@ coverage
 !*.metadata.json
 !dist/*.js
 tsconfig.json
+tslint.json
 
 #################
 ## JetBrains
