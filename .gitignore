@@ -16,7 +16,7 @@ npm-debug.log
 !make.js
 !examples/**/*.js
 coverage
-*.metadata.json
+/src/*.metadata.json
 
 #################
 ## JetBrains
