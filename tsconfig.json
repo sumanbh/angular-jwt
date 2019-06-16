@@ -14,7 +14,8 @@
     "paths": {
       "@angular/*": ["node_modules/@angular/*"]
     },
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "skipLibCheck": true
   },
   "files": ["index.ts", "./src/jwt.interceptor.ts"],
   "exclude": ["node_modules", "bundles"],

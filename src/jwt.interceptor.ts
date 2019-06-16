@@ -108,7 +108,8 @@ export class JwtInterceptor implements HttpInterceptor {
 
     if (token instanceof Promise) {
       return from(token).pipe(mergeMap(
-        (asyncToken: string | null) => {
+        (asyncToken) => {
+          // @ts-ignore
           return this.handleInterception(asyncToken, request, next);
         }
       ));
